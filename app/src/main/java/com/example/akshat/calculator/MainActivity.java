@@ -43,22 +43,24 @@ public class MainActivity extends AppCompatActivity {
         bpi = (Button) findViewById(R.id.button2);
         bsqrt = (Button) findViewById(R.id.button5);
         e1 = (EditText) findViewById(R.id.editText2);
-        bdlp=(Button)findViewById(R.id.button6);
-
-        bdlp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(getApplicationContext(),"LONG PRESS FOR DEVELOPER OPTIONS", Toast.LENGTH_SHORT).show();
-            }
-        });
-        bdlp.setOnLongClickListener(new View.OnLongClickListener() {
+        /*bdlp=(Button)findViewById(R.id.button6);
+*/
+        /*bdlp.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View view) {
-                Intent y=new Intent(MainActivity.this,Main3Activity.class);
-                startActivity(y);
+                Toast.makeText(getApplicationContext(),"LoginSuccessful",Toast.LENGTH_SHORT).show();
+                *//**//*
                 return false;
             }
-        });
+        });*/
+        /*bdlp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+               // Toast.makeText(getApplicationContext(),"LONG PRESS FOR DEVELOPER OPTIONS", Toast.LENGTH_SHORT).show();
+                Intent y=new Intent(MainActivity.this,Main4Activity.class);
+                startActivity(y);
+            }
+        });*/
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -187,7 +189,7 @@ public class MainActivity extends AppCompatActivity {
                 if(leq)
                     s="";
                 if(s.length()>0) {
-                    if ((s.charAt(s.length() - 1) >= '0' && s.charAt(s.length() - 1) <= '9')||s.charAt(s.length()-1)=='π')
+                    if ((s.charAt(s.length() - 1) >= '0' && s.charAt(s.length() - 1) <= '9')||s.charAt(s.length()-1)=='π'||s.charAt(s.length()-1)==')')
                         e1.setText(s + "+");
                     else{
                         if(s.length()>1){
@@ -217,7 +219,7 @@ public class MainActivity extends AppCompatActivity {
                 else if(s.length()==1&&((s.charAt(s.length() - 1) >= '0' && s.charAt(s.length() - 1) <= '9')||s.charAt(s.length()-1)=='π'))
                     e1.setText(s + "-");
                 else if(s.length()>1){
-                    if((s.charAt(s.length()-1)>='0'&&s.charAt(s.length()-1)<='9')||s.charAt(s.length()-1)=='π'){
+                    if((s.charAt(s.length()-1)>='0'&&s.charAt(s.length()-1)<='9')||s.charAt(s.length()-1)=='π'||s.charAt(s.length()-1)==')'){
                         e1.setText(s+"-");
                     }
                     else if(s.charAt(s.length()-1)=='.'&&(s.charAt(s.length()-2)>='0'&&s.charAt(s.length()-2)<='9'))
@@ -239,7 +241,7 @@ public class MainActivity extends AppCompatActivity {
                     s="";
                 //Toast.makeText(getBaseContext(),s,Toast.LENGTH_SHORT).show();
                 if(s.length()>0) {
-                    if ((s.charAt(s.length() - 1) >= '0' && s.charAt(s.length() - 1) <= '9')||s.charAt(s.length()-1)=='π')
+                    if ((s.charAt(s.length() - 1) >= '0' && s.charAt(s.length() - 1) <= '9')||s.charAt(s.length()-1)=='π'||s.charAt(s.length()-1)==')')
                         e1.setText(s + "*");
                     else{
                         //Toast.makeText(getBaseContext(),"2",Toast.LENGTH_SHORT).show();
@@ -267,7 +269,7 @@ public class MainActivity extends AppCompatActivity {
                 if(leq)
                     s="";
                 if(s.length()>0) {
-                    if ((s.charAt(s.length() - 1) >= '0' && s.charAt(s.length() - 1) <= '9')||s.charAt(s.length()-1)=='π')
+                    if ((s.charAt(s.length() - 1) >= '0' && s.charAt(s.length() - 1) <= '9')||s.charAt(s.length()-1)=='π'||s.charAt(s.length()-1)==')')
                         e1.setText(s + "/");
                     else{
                         if(s.length()>1){
@@ -358,7 +360,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 s=e1.getText().toString();
                 if(s.length()>0) {
-                    if ((s.charAt(s.length() - 1) >= '0' && s.charAt(s.length() - 1) <= '9')||s.charAt(s.length()-1)=='π')
+                    if ((s.charAt(s.length() - 1) >= '0' && s.charAt(s.length() - 1) <= '9')||s.charAt(s.length()-1)=='π'||s.charAt(s.length()-1)==')')
                         e1.setText(s + "^");
                     else{
                         if(s.length()>1){
